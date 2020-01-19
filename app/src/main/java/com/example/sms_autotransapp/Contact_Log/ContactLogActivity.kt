@@ -13,6 +13,16 @@ class ContactLogActivity : AppCompatActivity() {
     private lateinit var contactLogViewModel : ContactLogViewModel
     private var id: Long? = null
     override fun getIntent(): Intent {
+        val receivesender = intent?.getStringExtra("sender")
+        val contents = intent?.getStringExtra("contents")
+        val receivedDate = intent?.getStringExtra("receivedDate")
+        Log.d("LogA","onCreate :" +receivesender +" : "+contents+" : "+receivedDate)
+        if("01046973907" == receivesender){
+            Log.d("LogA","onCreate Stringcheck :"+receivesender )
+        }
+
+        val contacts  = contactViewModel.getAll().value
+
 
         return super.getIntent()
     }
@@ -27,11 +37,8 @@ class ContactLogActivity : AppCompatActivity() {
             Log.d("LogA","onNewIntent Stringcheck :"+receivesender )
         }
         val contacts  = contactViewModel.getAll().value
-        contacts?.forEach { contact -> Unit
-            //if(contact.receiveNumber.trim() == receivesender){
-                Log.d("LogA","onNewIntent namecheck :"+receivesender +" :  ${contact.receiveName.toString()}")
-            //}
-        }
+
+
         super.onNewIntent(intent)
     }
 
@@ -39,21 +46,9 @@ class ContactLogActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_contact_log)
 
-        val receivesender = intent?.getStringExtra("sender")
-        val contents = intent?.getStringExtra("contents")
-        val receivedDate = intent?.getStringExtra("receivedDate")
-        Log.d("LogA","onCreate :" +receivesender +" : "+contents+" : "+receivedDate)
-        if("01046973907" == receivesender){
-            Log.d("LogA","onCreate Stringcheck :"+receivesender )
-        }
-       /*
-        val contacts  = contactViewModel.getAll().value
-        contacts?.forEach { contact -> Unit
-            //if(contact.receiveNumber.trim() == receivesender){
-                Log.d("LogA","onCreate namecheck :"+receivesender +" :  ${contact.receiveName.toString()}")
-            //}
-        }
-*/
+
+
+
 
     }
 }

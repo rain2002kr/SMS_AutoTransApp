@@ -4,7 +4,7 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity(tableName = "contact")
+@Entity(tableName = "contactLog")
 class ContactLog (
     @PrimaryKey(autoGenerate = true)
     var id: Long?,
@@ -18,6 +18,9 @@ class ContactLog (
     @ColumnInfo(name =  "receiveNumber")
     var receiveNumber: String,
 
+    @ColumnInfo(name =  "message")
+    var message: String,
+
     @ColumnInfo(name =  "transName")
     var transName: String,
 
@@ -29,7 +32,7 @@ class ContactLog (
 
 ){
     //constructor() : this(null, "","",'\u0000')
-    constructor() : this(null, "","","",
+    constructor() : this(null, "","","","",
                                     "","",""
     )
 }

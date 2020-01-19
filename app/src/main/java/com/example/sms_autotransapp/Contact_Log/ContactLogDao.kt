@@ -5,7 +5,7 @@ import androidx.room.*
 
 @Dao
 interface ContactLogDao{
-    @Query("SELECT * FROM contact ORDER BY id ASC")
+    @Query("SELECT * FROM contactLog ORDER BY id ASC")
     fun getAll() : LiveData<List<ContactLog>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
