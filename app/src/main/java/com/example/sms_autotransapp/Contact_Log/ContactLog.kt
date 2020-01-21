@@ -13,19 +13,19 @@ class ContactLog (
     var receiveName: String,
 
     @ColumnInfo(name =  "receiveTime")
-    var receiveTime: String,
+    var receiveTime: String?,
 
     @ColumnInfo(name =  "receiveNumber")
     var receiveNumber: String,
 
     @ColumnInfo(name =  "message")
-    var message: String,
+    var message: String?,
 
     @ColumnInfo(name =  "transName")
     var transName: String,
 
     @ColumnInfo(name =  "transTime")
-    var transTime: String,
+    var transTime: String?,
 
     @ColumnInfo(name =  "transNumber")
     var transNumber: String
