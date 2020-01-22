@@ -18,11 +18,12 @@ class SendSmSActivity : AppCompatActivity() {
     private var id: Long? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_send_sm_s)
+
         val user = UserAPI(this)
 
 
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_send_sm_s)
 
         check.setOnClickListener({
             //val logs  = logViewModel.getAll().value
@@ -90,8 +91,6 @@ class SendSmSActivity : AppCompatActivity() {
         }, {
 
         })
-
-
 
 
         contactViewModel = ViewModelProviders.of(this).get(ContactViewModel::class.java)
