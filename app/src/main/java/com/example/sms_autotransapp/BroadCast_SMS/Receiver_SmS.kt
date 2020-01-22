@@ -37,9 +37,9 @@ class Receiver_SmS : BroadcastReceiver() {
     private fun sendToActivity(context: Context,sender: String,contents: String,receivedDate: String) {
         val intent = Intent(context, ContactLogActivity::class.java)
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_SINGLE_TOP or Intent.FLAG_ACTIVITY_CLEAR_TOP)
-        intent.putExtra("sender", sender)
-        intent.putExtra("contents", contents)
-        intent.putExtra("receivedDate", receivedDate)
+        intent.putExtra(ContactLogActivity.EXTRA_BROD_NUMBER, sender)
+        intent.putExtra(ContactLogActivity.EXTRA_BROD_CONTENTS, contents)
+        intent.putExtra(ContactLogActivity.EXTRA_BROD_RECEIVED_DATE, receivedDate)
         context.startActivity(intent)
     }
 
